@@ -1,0 +1,29 @@
+##
+## Deliberately naive string-based grammar for 
+## deriving SQL queries from English
+## 
+## Author: Richard Skeggs
+## URL: <http://nltk.sourceforge.net>
+## For license information, see LICENSE.TXT
+% start S
+S[SEM=(?np + WHERE + ?vp)] -> NP[SEM=?np] VP[SEM=?vp]
+
+VP[SEM=(?v + ?pp)] ->IV[SEM=?v] PP[SEM=?pp]
+VP[SEM=(?v + ?ap)] ->IV[SEM=?v] AP[SEM=?ap]
+NP[SEM=(?det + ?n)] ->Det[SEM=?det] N[SEM=?n]
+PP[SEM=(?p + ?np)] ->P[SEM=?p] VP[SEM=?np]
+AP[SEM=?pp] ->A[SEM=?a] PP[SEM=?pp]
+
+Det[SEM='Select'] -> 'Which' | 'Who' | 'What'| 'Where' | 'List'
+N[SEM='* from customer' ] -> 'customer' | 'Customer'
+N[SEM='* from sales' ] -> 'sales' | 'Sales'
+
+IV[SEM=''] -> 'are'
+A[SEM=''] -> 'located'
+P[SEM=''] -> 'in'
+
+NP[SEM='customer.telephoneno="01552 533436"']->'01552 533436'
+NP[SEM='customer.postcode="CO4 3SE"']->'CO4 3SE'
+NP[SEM='customer.accountno="123456"']->'123456'
+NP[SEM='sales.invoiceno="987"']->'987'
+NP[SEM='sales.accountno="123456"']->'123456'

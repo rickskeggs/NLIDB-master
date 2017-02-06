@@ -1,0 +1,8 @@
+Which_IRR customer_AP  has_IRR the_IRR postcode_N co4_NP 3sq_NP 
+list_IRR all_IRR  customer_AP  with_IRR the_IRR postcode_N  co4_NP 
+list_IRR all_IRR  invoices_NT  for_IRR  customer_AP  12345987_NP
+Which_IRR  customer_AP  has_IRR the_IRR  postcode_N  co43sq_NP
+co43sq_NP  is_IRR the_IRR postcode_N  for_IRR which_IRR customer_AP
+Which_IRR  customer_AP has_IRR the_IRR location_N co4_NP 3sq_NP 
+customer_AP postcode_N co4_NP 3sq_NP 
+customer_AP postcode_N CM13#2PE_NP 
